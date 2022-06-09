@@ -1,2 +1,3 @@
-public class PokemonGymOwner {
+public class PokemonGymOwner extends PokemonTrainer {
+    
 }

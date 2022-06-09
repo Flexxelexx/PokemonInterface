@@ -1,17 +1,22 @@
 public abstract class Pokemon {
 
+    private int level;
+    private int hp;
+    private String food;
+    private String sound;
+    private String name;
+    private String type;
 
-    int level;
-    int hp;
 
-    String name;
 
-    String enemy;
-
-    String food;
-    String sound;
-
-    String village;
+    public Pokemon (int level, int hp, String food, String sound, String name, String type) {
+        this.level = level;
+        this.hp = hp;
+        this.food = food;
+        this.sound = sound;
+        this.name = name;
+        this.type = type;
+    }
 
     public int getLevel() {
         return level;
@@ -27,22 +32,6 @@ public abstract class Pokemon {
 
     public void setHp(int hp) {
         this.hp = hp;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEnemy() {
-        return enemy;
-    }
-
-    public void setEnemy(String enemy) {
-        this.enemy = enemy;
     }
 
     public String getFood() {
@@ -61,11 +50,19 @@ public abstract class Pokemon {
         this.sound = sound;
     }
 
-    public String getVillage() {
-        return village;
+    public String getName() {
+        return name;
     }
 
-    public void setVillage(String village) {
-        this.village = village;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
