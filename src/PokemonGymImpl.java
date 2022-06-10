@@ -2,8 +2,6 @@ import java.util.*;
 
 public class PokemonGymImpl implements PokemonGym{
 
-    private String village;
-
     public void enteredTheGym(PokemonTrainer player1) {
         PokemonGymOwner gymOwner = new PokemonGymOwner("Brock");
         List<Pokemon> names = new ArrayList<>();
@@ -15,8 +13,8 @@ public class PokemonGymImpl implements PokemonGym{
         names.add(gymOwner.getVenusaur());
         gymOwner.setPokemons(names);
         System.out.println("\nYou have entered the gym.");
-        System.out.println("In front of you stands a Pokemon-trainer");
-        System.out.println("\n" + gymOwner.getName() + ": 'Hello stranger! I am " + gymOwner.getName() + ", the owner of this gym. Who are you?");
+        System.out.println("In front of you stands a Pokemon-trainer.");
+        System.out.println("\n" + gymOwner.getName() + ": Hello stranger! I am " + gymOwner.getName() + ", the owner of this gym. Who are you?");
         System.out.println("\nI'm " + player1.getName() + " and i am here to challenge you for a battle!");
         System.out.println("\nSo you're after my badge too, lets fight!!!");
 
@@ -115,15 +113,12 @@ public class PokemonGymImpl implements PokemonGym{
                 pokemons.add(p);
             }
         }
-        System.out.println("\nPlease make your choice of pokemon to attack");
-        System.out.println("===================");
+        System.out.println("\nPlease make your choice of pokemon to attack: \n");
         for (Pokemon p : pokemons) {
             System.out.println(p.getName());
         }
         String pokemon = speler_A.nextLine();
-        System.out.println("===================");
         return selectPokemon(pokemon, trainer);
-
     }
 
     public int randomAttackByGymOwner(){
@@ -263,10 +258,12 @@ public class PokemonGymImpl implements PokemonGym{
 
     public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym){
         Scanner speler_A = new Scanner(System.in);
-        int result = 120;
 
-        System.out.println("\nDo you want to attack or change or heal your pokemon?");
-        System.out.println("'A' for attack || 'C' for change || 'H' for heal");
+        System.out.println("\nType in next action: ");
+        System.out.println("======================================================================");
+        System.out.println("|| Attack with Pokemon || Change your Pokemon ||  Heal your pokemon ||");
+        System.out.println("||   'A' for attack    ||   'C' for change    ||    'H' for heal    ||");
+        System.out.println("======================================================================");
         String choice = speler_A.nextLine();
 
         if (choice.equalsIgnoreCase("a")) {
@@ -278,9 +275,10 @@ public class PokemonGymImpl implements PokemonGym{
             fightRound(trainer, gym, pokemon, gymPokemon);
         } else if (choice.equalsIgnoreCase("h")) {
             System.out.println("You have 3 options for healing: ");
-            System.out.println("Potion -- this heals the Pokemon back to full HP");
-            System.out.println(pokemon.getFood() + " -- this heals the Pokemon for 50% of its HP");
-            System.out.println("Berries -- this heals the Pokemon for 25% of its HP");
+            System.out.println("======================================================");
+            System.out.println("||     Potion     ||     " + pokemon.getFood() + "     ||    Berries     ||");
+            System.out.println("||   Heal 100%    ||   Heal 50%   ||    Heal 25%    ||");
+            System.out.println("======================================================");
             String foodChoice = speler_A.nextLine();
 
             if (foodChoice.equalsIgnoreCase("potion")) {

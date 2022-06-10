@@ -7,7 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner speler_A = new Scanner(System.in);
         PokemonGymImpl pokemonGym = new PokemonGymImpl();
-        System.out.println("First player please enter your name: ");
+        System.out.println("#######################################################################");
+        System.out.println("### ~~                                                           ~~ ###");
+        System.out.println("### |-> WELCOME TO POKEMON INTERFACE - A NOVI BACKEND ASSIGMENT <-| ###");
+        System.out.println("### ~~                                                           ~~ ###");
+        System.out.println("#######################################################################");
+        System.out.println("\nWelcome stranger!");
+        System.out.println("What is your name?");
         String userA = speler_A.nextLine();
         PokemonTrainer player1 = new PokemonTrainer(userA);
         List<Pokemon> names = new ArrayList<>();
@@ -18,12 +24,13 @@ public class Main {
         names.add(player1.getRaichu());
         names.add(player1.getVenusaur());
         player1.setPokemons(names);
-        System.out.println("To start your game, we have given you 6 Pokemons");
+        System.out.println("\nWelcome again " + player1.getName() + ".\nI am the console that is going to help you with your battles!");
+        System.out.println("We are going to give you 6 Pokemons.");
         System.out.println("These are the Pokemons you can use:");
-        System.out.println("===================");
+        System.out.println("\n~~~~~~~~~~~~~");
         pokemonGym.printPokemon(names);
-        System.out.println("===================");
-        System.out.println("Would you like to enter a gym looking for a fight?");
+        System.out.println("~~~~~~~~~~~~~");
+        System.out.println("\nWould you like to enter the gym looking for a fight?");
         System.out.println("Please enter yes or no");
         if (speler_A.nextLine().equals("yes")) {
             pokemonGym.enteredTheGym(player1);
