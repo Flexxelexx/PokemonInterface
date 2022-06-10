@@ -29,25 +29,6 @@ public class PokemonGymImpl implements PokemonGym{
 
     }
 
-    public void continuePlaying(PokemonTrainer player1) {
-        PokemonGymOwner gymOwner = new PokemonGymOwner("Brock");
-        List<Pokemon> names = new ArrayList<>();
-        names.add(gymOwner.getBlastoise());
-        names.add(gymOwner.getGyarados());
-        names.add(gymOwner.getCharizard());
-        names.add(gymOwner.getDitto());
-        names.add(gymOwner.getRaichu());
-        names.add(gymOwner.getVenusaur());
-        gymOwner.setPokemons(names);
-        System.out.println(player1.getName() + " has chosen to continue the fight against " + gymOwner.getName());
-
-        Pokemon gymPokemon = chooseGymPokemon(gymOwner);
-        System.out.println(gymOwner.getName() + ": I'll choose you, " + gymPokemon.getName() + "!!");
-        Pokemon pokemon = choosePokemon(player1);
-        System.out.println(player1.getName() + ": I'll choose you, " + pokemon.getName() + "!!");
-
-        fightRound(player1, gymOwner, pokemon, gymPokemon);
-    }
 
     public void printPokemon(List<Pokemon> pokemons) {
         for (Pokemon p : pokemons) {
@@ -77,6 +58,8 @@ public class PokemonGymImpl implements PokemonGym{
 
         }
         if(pokemon.getHp() <= 0){
+            List<Pokemon> names = new ArrayList<>();
+            names.remove(pokemon);
             System.out.println(gymPokemon.getName() + " has defeated " + pokemon.getName());
         } else if (gymPokemon.getHp() <= 0){
             System.out.println(pokemon.getName() + " has defeated " + gymPokemon.getName());
@@ -85,11 +68,30 @@ public class PokemonGymImpl implements PokemonGym{
         System.out.println("Would you like to keep playing? yes or no");
         String keepPlaying = speler_A.nextLine();
         if (keepPlaying.equals("yes")){
-//            enteredTheGym(trainer);
               continuePlaying(trainer);
         } else {
             System.out.println("Thank you for playing");
         }
+    }
+
+    public void continuePlaying(PokemonTrainer player1) {
+        PokemonGymOwner gymOwner = new PokemonGymOwner("Brock");
+        List<Pokemon> names = new ArrayList<>();
+        names.add(gymOwner.getBlastoise());
+        names.add(gymOwner.getGyarados());
+        names.add(gymOwner.getCharizard());
+        names.add(gymOwner.getDitto());
+        names.add(gymOwner.getRaichu());
+        names.add(gymOwner.getVenusaur());
+        gymOwner.setPokemons(names);
+        System.out.println(player1.getName() + " has chosen to continue the fight against " + gymOwner.getName());
+
+        Pokemon gymPokemon = chooseGymPokemon(gymOwner);
+        System.out.println(gymOwner.getName() + ": I'll choose you, " + gymPokemon.getName() + "!!");
+        Pokemon pokemon = choosePokemon(player1);
+        System.out.println(player1.getName() + ": I'll choose you, " + pokemon.getName() + "!!");
+
+        fightRound(player1, gymOwner, pokemon, gymPokemon);
     }
 
     public Pokemon chooseGymPokemon(PokemonGymOwner gymOwner){
