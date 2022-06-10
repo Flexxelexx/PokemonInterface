@@ -5,7 +5,7 @@ public class WaterPokemon extends Pokemon {
 
     private final static String TYPE = "water";
 
-    List<String> attacks = Arrays.asList("surf", "hydroPump", "hydroCanon", "rainDance");
+    List<String> attacks = Arrays.asList("Surf", "Hydropump", "Hydrocanon", "Raindance");
 
     List<String> getAttacks() {
         return attacks;

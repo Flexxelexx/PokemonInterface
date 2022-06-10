@@ -8,7 +8,6 @@ public abstract class Pokemon {
     private String type;
 
 
-
     public Pokemon (int level, int hp, String food, String sound, String name, String type) {
         this.level = level;
         this.hp = hp;
@@ -65,4 +64,5 @@ public abstract class Pokemon {
     public void setType(String type) {
         this.type = type;
     }
+
 }

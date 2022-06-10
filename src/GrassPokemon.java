@@ -5,7 +5,7 @@ public class GrassPokemon extends Pokemon {
 
     private final static String TYPE = "grass";
 
-    List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leechseed", "leaveblade");
+    List<String> attacks = Arrays.asList("Leafstorm", "Solarbeam", "Leechseed", "Leaveblade");
 
     List<String> getAttacks() {
         return attacks;

@@ -5,7 +5,7 @@ public class FirePokemon extends Pokemon {
 
     private final static String TYPE = "fire";
 
-    List<String> attacks = Arrays.asList("firelash", "flamethrower", "pyroBall", "inferno");
+    List<String> attacks = Arrays.asList("Firelash", "Flamethrower", "Pyroball", "Inferno");
 
     List<String> getAttacks() {
         return attacks;

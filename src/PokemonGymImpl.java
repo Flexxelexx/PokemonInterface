@@ -261,6 +261,7 @@ public class PokemonGymImpl implements PokemonGym{
 
     public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym){
         Scanner speler_A = new Scanner(System.in);
+        int result = 120;
 
         System.out.println("\nDo you want to attack or change or heal your pokemon?");
         System.out.println("'A' for attack || 'C' for change || 'H' for heal");
@@ -269,10 +270,35 @@ public class PokemonGymImpl implements PokemonGym{
         if (choice.equalsIgnoreCase("a")) {
             String attack = chooseAttackPlayer(pokemon);
             performAttackPlayer(pokemon, gymPokemon, attack);
-        } else {
+        } else if (choice.equalsIgnoreCase("c")){
             pokemon = choosePokemon(trainer);
             attackOrChange(pokemon, gymPokemon, trainer, gym);
             fightRound(trainer, gym, pokemon, gymPokemon);
+        } else if (choice.equalsIgnoreCase("h")) {
+            System.out.println("You have 3 options for healing: ");
+            System.out.println("Potion -- this heals the Pokemon back to full HP");
+            System.out.println(pokemon.getFood() + " -- this heals the Pokemon for 50% of its HP");
+            System.out.println("Berries -- this heals the Pokemon for 25% of its HP");
+            String foodChoice = speler_A.nextLine();
+
+            if (foodChoice.equalsIgnoreCase("potion")) {
+                pokemon.setHp(120);
+                System.out.println("The pokemon is fully healed and its HP is now: " + pokemon.getHp());
+            } else if (foodChoice.equalsIgnoreCase(pokemon.getFood())) {
+                if (pokemon.getHp() + 60 > 120) {
+                    pokemon.setHp(120);
+                } else {
+                    pokemon.setHp(pokemon.getHp() + 60);
+                }
+                System.out.println("The pokemon healed for 50% and its HP is now: " + pokemon.getHp());
+            } else if (foodChoice.equalsIgnoreCase("berries")) {
+                if (pokemon.getHp() + 30 > 120) {
+                    pokemon.setHp(120);
+                } else {
+                    pokemon.setHp(pokemon.getHp() + 30);
+                }
+                System.out.println("The pokemon healed for 25% and its HP is now: " + pokemon.getHp());
+            }
         }
 
 

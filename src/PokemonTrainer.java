@@ -6,12 +6,12 @@ public class PokemonTrainer {
 
     private String name;
 
-    FirePokemon charizard = new FirePokemon("Charizard", 35, 100, "meat", "Charrrr");
-    WaterPokemon blastoise = new WaterPokemon("Blastoise", 40, 100, "meat", "Blaaaast");
-    WaterPokemon gyarados = new WaterPokemon("Gyarados", 45, 100, "fish", "Gyaradoooooss");
-    GrassPokemon venusaur = new GrassPokemon("Venusaur", 50, 100, "grass", "Venusaaaaauuur");
-    GrassPokemon ditto = new GrassPokemon("Ditto", 55, 100, "grass", "Ditttooooo");
-    ElectricPokemon raichu = new ElectricPokemon("Raichu", 60, 100, "thunderbolts", "Raichuuuuuu");
+    FirePokemon charizard = new FirePokemon("Charizard", 35, 120, "Meat", "Charrrr");
+    WaterPokemon blastoise = new WaterPokemon("Blastoise", 40, 120, "Meat", "Blaaaast");
+    WaterPokemon gyarados = new WaterPokemon("Gyarados", 45, 120, "Fish", "Gyaradoooooss");
+    GrassPokemon venusaur = new GrassPokemon("Venusaur", 50, 120, "Grass", "Venusaaaaauuur");
+    GrassPokemon ditto = new GrassPokemon("Ditto", 55, 120, "Grass", "Ditttooooo");
+    ElectricPokemon raichu = new ElectricPokemon("Raichu", 60, 120, "Thunderbolts", "Raichuuuuuu");
 
 
     List<Pokemon> pokemons = Arrays.asList(charizard, blastoise, gyarados, venusaur, ditto, raichu);
