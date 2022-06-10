@@ -262,8 +262,8 @@ public class PokemonGymImpl implements PokemonGym{
     public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym){
         Scanner speler_A = new Scanner(System.in);
 
-        System.out.println("Do you want to attack or change your pokemon?");
-        System.out.println("Type a for attack or c for change");
+        System.out.println("\nDo you want to attack or change or heal your pokemon?");
+        System.out.println("'A' for attack || 'C' for change || 'H' for heal");
         String choice = speler_A.nextLine();
 
         if (choice.equalsIgnoreCase("a")) {
@@ -274,6 +274,8 @@ public class PokemonGymImpl implements PokemonGym{
             attackOrChange(pokemon, gymPokemon, trainer, gym);
             fightRound(trainer, gym, pokemon, gymPokemon);
         }
+
+
     }
 
 }
