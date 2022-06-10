@@ -14,19 +14,39 @@ public class PokemonGymImpl implements PokemonGym{
         names.add(gymOwner.getRaichu());
         names.add(gymOwner.getVenusaur());
         gymOwner.setPokemons(names);
-        System.out.println("You have entered the gym");
-        System.out.println("In front of you stands a pokemontrainer");
-        System.out.println(gymOwner.getName() + ": Hello stranger, I'm " + gymOwner.getName() + ", the owner of this gym. Who are you?");
-        System.out.println("I'm " + player1.getName() + " and i'm here to challenge you for a battle");
-        System.out.println("So you're after my badge too, lets fight!!!");
+        System.out.println("\nYou have entered the gym.");
+        System.out.println("In front of you stands a Pokemon-trainer");
+        System.out.println("\n" + gymOwner.getName() + ": 'Hello stranger! I am " + gymOwner.getName() + ", the owner of this gym. Who are you?");
+        System.out.println("\nI'm " + player1.getName() + " and i am here to challenge you for a battle!");
+        System.out.println("\nSo you're after my badge too, lets fight!!!");
 
         Pokemon gymPokemon = chooseGymPokemon(gymOwner);
-        System.out.println(gymOwner.getName() + ": I'll choose you, " + gymPokemon.getName());
+        System.out.println(gymOwner.getName() + ": I'll choose you, " + gymPokemon.getName() + "!!");
         Pokemon pokemon = choosePokemon(player1);
-        System.out.println(player1.getName() + ": I'll choose you, " + pokemon.getName());
+        System.out.println(player1.getName() + ": I'll choose you, " + pokemon.getName() + "!!");
 
         fightRound(player1, gymOwner, pokemon, gymPokemon);
 
+    }
+
+    public void continuePlaying(PokemonTrainer player1) {
+        PokemonGymOwner gymOwner = new PokemonGymOwner("Brock");
+        List<Pokemon> names = new ArrayList<>();
+        names.add(gymOwner.getBlastoise());
+        names.add(gymOwner.getGyarados());
+        names.add(gymOwner.getCharizard());
+        names.add(gymOwner.getDitto());
+        names.add(gymOwner.getRaichu());
+        names.add(gymOwner.getVenusaur());
+        gymOwner.setPokemons(names);
+        System.out.println(player1.getName() + " has chosen to continue the fight against " + gymOwner.getName());
+
+        Pokemon gymPokemon = chooseGymPokemon(gymOwner);
+        System.out.println(gymOwner.getName() + ": I'll choose you, " + gymPokemon.getName() + "!!");
+        Pokemon pokemon = choosePokemon(player1);
+        System.out.println(player1.getName() + ": I'll choose you, " + pokemon.getName() + "!!");
+
+        fightRound(player1, gymOwner, pokemon, gymPokemon);
     }
 
     public void printPokemon(List<Pokemon> pokemons) {
@@ -50,9 +70,9 @@ public class PokemonGymImpl implements PokemonGym{
         Scanner speler_A = new Scanner(System.in);
         while (pokemon.getHp() > 0 && gymPokemon.getHp() > 0) {
 
-            System.out.println("It's " + owner.getName() + "'s turn to attack");
+            System.out.println("\nIt's " + owner.getName() + "'s turn to attack");
             gymOwnerAttacks(gymPokemon, pokemon);
-            System.out.println("It's " + trainer.getName() + "'s turn to attack");
+            System.out.println("\nIt's " + trainer.getName() + "'s turn to attack");
             attackOrChange(pokemon, gymPokemon, trainer, owner);
 
         }
@@ -65,7 +85,8 @@ public class PokemonGymImpl implements PokemonGym{
         System.out.println("Would you like to keep playing? yes or no");
         String keepPlaying = speler_A.nextLine();
         if (keepPlaying.equals("yes")){
-            enteredTheGym(trainer);
+//            enteredTheGym(trainer);
+              continuePlaying(trainer);
         } else {
             System.out.println("Thank you for playing");
         }
@@ -92,12 +113,15 @@ public class PokemonGymImpl implements PokemonGym{
                 pokemons.add(p);
             }
         }
-        System.out.println("Please make your choice of pokemon to attack");
+        System.out.println("\nPlease make your choice of pokemon to attack");
+        System.out.println("===================");
         for (Pokemon p : pokemons) {
             System.out.println(p.getName());
         }
         String pokemon = speler_A.nextLine();
+        System.out.println("===================");
         return selectPokemon(pokemon, trainer);
+
     }
 
     public int randomAttackByGymOwner(){

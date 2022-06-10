@@ -19,23 +19,30 @@ public class WaterPokemon extends Pokemon {
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with Surf");
         int temp = 0;
         switch (enemy.getType()) {
-            case "water":
-                temp = enemy.getHp() -10;
+            case "water" -> {
+                temp = enemy.getHp() - 10;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 10 hp");
-            case "fire":
-                temp = enemy.getHp() -40;
+                System.out.println("This wasn't an effective attack");
+            }
+            case "fire" -> {
+                temp = enemy.getHp() - 40;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 40 hp");
-            case "electric":
-                temp = enemy.getHp() -30;
+                System.out.println("This attack was super-effective!");
+            }
+            case "electric" -> {
+                temp = enemy.getHp() - 30;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 30 hp");
-            case "grass":
-                temp = enemy.getHp() -20;
+                System.out.println("This was an effective attack!");
+            }
+            case "grass" -> {
+                temp = enemy.getHp() - 20;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 20 hp");
-
+                System.out.println("This was normal hit!");
+            }
         }
         System.out.println("New HP of " + enemy.getName() + " is " + enemy.getHp());
     }
@@ -44,23 +51,30 @@ public class WaterPokemon extends Pokemon {
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with Hydropump");
         int temp = 0;
         switch (enemy.getType()) {
-            case "water":
-                temp = enemy.getHp() -10;
+            case "water" -> {
+                temp = enemy.getHp() - 10;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 10 hp");
-            case "fire":
-                temp = enemy.getHp() -40;
+                System.out.println("This wasn't an effective attack");
+            }
+            case "fire" -> {
+                temp = enemy.getHp() - 40;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 40 hp");
-            case "electric":
-                temp = enemy.getHp() -30;
+                System.out.println("This attack was super-effective!");
+            }
+            case "electric" -> {
+                temp = enemy.getHp() - 30;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 30 hp");
-            case "grass":
-                temp = enemy.getHp() -20;
+                System.out.println("This was an effective attack!");
+            }
+            case "grass" -> {
+                temp = enemy.getHp() - 20;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 20 hp");
-
+                System.out.println("This was normal hit!");
+            }
         }
         System.out.println("New HP of " + enemy.getName() + " is " + enemy.getHp());
     }
@@ -69,23 +83,30 @@ public class WaterPokemon extends Pokemon {
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with Hydrocanon");
         int temp = 0;
         switch (enemy.getType()) {
-            case "water":
-                temp = enemy.getHp() -10;
+            case "water" -> {
+                temp = enemy.getHp() - 10;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 10 hp");
-            case "fire":
-                temp = enemy.getHp() -40;
+                System.out.println("This wasn't an effective attack");
+            }
+            case "fire"  -> {
+                temp = enemy.getHp() - 40;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 40 hp");
-            case "electric":
-                temp = enemy.getHp() -30;
+                System.out.println("This attack was super-effective!");
+            }
+            case "electric" -> {
+                temp = enemy.getHp() - 30;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 30 hp");
-            case "grass":
-                temp = enemy.getHp() -20;
+                System.out.println("This was an effective attack!");
+            }
+            case "grass" -> {
+                temp = enemy.getHp() - 20;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 20 hp");
-
+                System.out.println("This was normal hit!");
+            }
         }
         System.out.println("New HP of " + enemy.getName() + " is " + enemy.getHp());
     }
@@ -94,23 +115,30 @@ public class WaterPokemon extends Pokemon {
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with Raindance");
         int temp = 0;
         switch (enemy.getType()) {
-            case "water":
-                temp = enemy.getHp() -10;
+            case "water" -> {
+                temp = enemy.getHp() - 10;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 10 hp");
-            case "fire":
-                temp = enemy.getHp() -40;
+                System.out.println("This wasn't an effective attack");
+            }
+            case "fire" -> {
+                temp = enemy.getHp() - 40;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 40 hp");
-            case "electric":
-                temp = enemy.getHp() -30;
+                System.out.println("This attack was super-effective!");
+            }
+            case "electric" -> {
+                temp = enemy.getHp() - 30;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 30 hp");
-            case "grass":
-                temp = enemy.getHp() -20;
+                System.out.println("This was an effective attack!");
+            }
+            case "grass" -> {
+                temp = enemy.getHp() - 20;
                 enemy.setHp(temp);
                 System.out.println(enemy.getName() + " loses 20 hp");
-
+                System.out.println("This was normal hit!");
+            }
         }
         System.out.println("New HP of " + enemy.getName() + " is " + enemy.getHp());
     }
